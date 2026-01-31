@@ -1,0 +1,41 @@
+ .home-container{
+  margin-top:2rem ;
+      display: flex;
+      justify-content: center;
+      
+    }.home-blog{
+      width: 60rem;
+      box-shadow: 0 0 40px rgb(246, 209, 246);
+      border-radius: 2rem;
+       display: flex;
+       flex-direction: column;
+       padding: 1rem;
+
+    }.home-title{
+      text-align: center;
+      font-size: larger;
+      font-weight: 800;
+    }.home-content{
+      text-align: center;
+    }.home-metadata{
+      display: flex;
+      justify-content:space-evenly;
+       margin-inline: 2rem;
+    
+    }.read-blog>a{
+    text-decoration: none;
+    margin:1rem ;
+    font-size: large;
+    border: 1px solid black;
+    text-align: center;
+    padding: .4rem;
+    border-radius: 20px;
+    background-color: pink;
+    color: white;
+    cursor: pointer;
+  }.read-blog>a:hover{
+     background-color: white;
+    color: pink;
+    border: 1px solid pink;
+    cursor: pointer;
+  }

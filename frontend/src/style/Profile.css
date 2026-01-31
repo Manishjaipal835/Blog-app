@@ -1,0 +1,207 @@
+/* BODY CONTAINER */
+.profile-body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #fceaff, #fff0f5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* MAIN PROFILE CARD CONTAINER */
+.profile-container {
+  width: 90%;
+  max-width: 90rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* USER INFO CARD */
+.profile-data {
+  width: 28rem;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25), 0 0 10px rgba(255, 182, 193, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-data:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 105, 180, 0.35), 0 0 15px rgba(255, 182, 193, 0.25);
+}
+
+/* PROFILE LETTER AVATAR */
+.profile-letter {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* PROFILE NAME */
+.profile-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #8a2be2;
+  text-align: center;
+}
+
+/* BUTTONS CONTAINER */
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* COMMON BUTTON STYLE */
+.profile-actions button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ADD BLOG BUTTON */
+.profile-actions .btn-add {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: #fff;
+}
+.profile-actions .btn-add:hover {
+  background: #fff;
+  color: #ff758c;
+  border: 2px solid #ff758c;
+}
+
+/* LOGOUT BUTTON */
+.profile-actions .btn-logout {
+  background: linear-gradient(135deg, #8a2be2, #b266ff);
+  color: #fff;
+}
+.profile-actions .btn-logout:hover {
+  background: #fff;
+  color: #8a2be2;
+  border: 2px solid #8a2be2;
+}
+
+/* BLOG LIST CARD */
+.profile-bloglist {
+  width: 100%;
+  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2), 0 0 10px rgba(255, 105, 180, 0.1);
+  transition: transform 0.3s ease;
+}
+.profile-bloglist:hover {
+  transform: translateY(-3px);
+}
+
+/* BLOG LIST HEADING */
+.blogs-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff69b4;
+  margin-bottom: 1rem;
+}
+
+/* NO BLOGS MESSAGE */
+.profile-bloglist > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c71585;
+}
+
+/* INDIVIDUAL BLOG CARD */
+.blog-card {
+  width: 100%;
+  background: #fff0f5;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 105, 180, 0.35);
+}
+
+/* BLOG TITLE */
+.blog-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #8a2be2;
+  flex: 1 1 60%;
+}
+
+/* BLOG BUTTONS */
+.blog-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.blog-actions button {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* UPDATE BUTTON */
+.btn-update {
+  background: #ff69b4;
+  color: #fff;
+}
+.btn-update:hover {
+  background: #fff;
+  color: #ff69b4;
+  border: 2px solid #ff69b4;
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+  background: #c71585;
+  color: #fff;
+}
+.btn-delete:hover {
+  background: #fff;
+  color: #c71585;
+  border: 2px solid #c71585;
+}
+
+/* READ BUTTON */
+.btn-read {
+  background: #8a2be2;
+  color: #fff;
+}
+.btn-read:hover {
+  background: #fff;
+  color: #8a2be2;
+  border: 2px solid #8a2be2;
+}
