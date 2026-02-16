@@ -10,35 +10,33 @@ const initialState = {
 
 export const addApiCall = createAsyncThunk(
   "addBlog/post",
-  async (data, { rejectWithValue }) => {
-    console.log("THUNK DATA 👉", data);
-
- try {
-
-      const formData = new FormData();
-      formData.append("title", data.title);
-      formData.append("content", data.content);
-
-      if (data.images && data.images.length > 0) {
-        data.images.forEach((file) => {
-          formData.append("image", file);
-        });
+  async (formData, { rejectWithValue }) => {
+    try {
+      // DEBUG
+      for (let pair of formData.entries()) {
+        console.log("FORMDATA ", pair);
       }
 
       const res = await axios.post(
         "http://localhost:4000/api/blog/addblog",
         formData,
-        { withCredentials: true }
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          withCredentials: true,
+        }
       );
 
       return res.data;
     } catch (error) {
       return rejectWithValue(
-        error.response?.data?.message || "Add blog failed"
+        error.response?.data || { message: "Add blog failed" }
       );
     }
   }
 );
+
 
 const AddSlice = createSlice({
   name: "addBlog",

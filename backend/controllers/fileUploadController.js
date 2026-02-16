@@ -9,17 +9,40 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
+// Allowed file types
+const fileFilter = (req, file, cb) => {
+  const allowedTypes = /jpeg|jpg|png|webp/;
+  const ext = path.extname(file.originalname).toLowerCase();
+  const mime = file.mimetype;
+
+  if (allowedTypes.test(ext) && allowedTypes.test(mime)) {
+    cb(null, true);
+  } else {
+    cb(new Error("Only image files are allowed"), false);
+  }
+};
+
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
+  destination: (req, file, cb) => {
     cb(null, uploadDir);
   },
-  filename: function (req, file, cb) {
-    const fileName =
-      Date.now() + "-" + Math.round(Math.random() * 1e9) + path.extname(file.originalname);
-    cb(null, fileName);
+  filename: (req, file, cb) => {
+    const uniqueName =
+      Date.now() +
+      "-" +
+      Math.round(Math.random() * 1e9) +
+      path.extname(file.originalname).toLowerCase();
+
+    cb(null, uniqueName);
   },
 });
 
-const upload = multer({ storage });
+const upload = multer({
+  storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB limit
+  },
+  fileFilter,
+});
 
 module.exports = upload;

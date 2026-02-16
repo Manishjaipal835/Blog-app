@@ -43,6 +43,6 @@ router.put(
 router.delete("/deleteblog/:id", isLogin, deleteController);
 
 // delete blog image
-router.delete("/deleteimage/:id", isLogin, deleteImageController);
+router.delete("/deleteimage", deleteImageController);
 
 module.exports = router;

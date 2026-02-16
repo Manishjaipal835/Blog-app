@@ -23,14 +23,14 @@ function ReadBlog() {
 
 { !ans ?"no blogs": <div className={`w-full p-[3rem] bg-[#f7e9e9] `}>
     
-  <div className={`bg-pink-100 rounded-2xl p-3 shadow-2xl flex flex-col justify-center items-center gap-3`}>
+  <div className={`bg-black-50 rounded-2xl p-3 shadow-2xl flex flex-col justify-center items-center gap-3`}>
  <div className={`shadow-xl font-mono `}>
     <h3>{ans.title}</h3>
    </div>
 
          {ans?.images && ans.images.length > 0 &&                  
            ( ans.images.map((val, index) => (
-          <div key={index} className={`w-[50%] text-justify`} >
+          <div key={index} className={`w-[30%] text-justify`} >
       <img src={val} alt="" />
    </div>
   )))}

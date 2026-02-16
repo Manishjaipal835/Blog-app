@@ -1,82 +1,77 @@
-    .update-container{
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1rem;
-    }.update-title{
-        display: flex;
-        flex-direction: column;
-        gap:1rem ;
-        justify-content: center;
-        align-items: center;
-    }.update-title>#input{
-      height: 2rem;
-      width: 30rem;
+.update-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+}
 
-    }.update-content{
-        display: flex;
-        flex-direction: column;
-        gap:1rem ;
-        justify-content: center;
-        align-items: center;
-    }.update-content>#content{
-      height: 20rem;
-      width: 30rem;
-    }.update-upload{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-    }
-    .update-images{
-        display: flex;
-        flex-direction: column;
-        gap:1rem ;
-        padding: .3rem;
-        justify-content: center;
-        align-items: center;
-    }.update-upload>button{
-        background-color: pink;
-        border-radius: 1rem;
-        padding: .3rem;
-        text-align: center;
-        margin-block:.4rem ;
-        border: .9px solid rgb(112, 103, 103);
-        cursor: pointer;
-        font-weight: 400;
-        color: white;
-        transition: all .4s ease-out;
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    }.update-upload>button:hover{
-        background-color: white;
-        padding: .4rem;
-        border: 1.5px solid pink;
-        color: pink;
-        font-weight: 600;
-    }.image-section{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }.update-delbtn{
-      margin-block: .4rem;
-      background-color: pink;
-      color: white;
-      padding: .3rem;
-      font-weight: 500;
-        border: .5px solid rgb(93, 76, 76);
-       border-radius: 2rem; 
-       cursor: pointer;
-        transition: all .4s ease-out;
-    }.update-delbtn:hover{
-     
-      background-color: white;
-      color: pink;
-      padding: .3rem;
-      font-weight: 600;
-        border: 1.1px solid pink;
-       border-radius: 2rem; 
-     
-    }
-    
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.update-btn {
+  background: #4f46e5;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.update-btn:hover {
+  background: #4338ca;
+}
+
+.image-section-wrapper {
+  margin-top: 40px;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image-card {
+  position: relative;
+}
+
+.image-card img {
+  width: 200px;   /* NORMAL SIZE */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-card button {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}

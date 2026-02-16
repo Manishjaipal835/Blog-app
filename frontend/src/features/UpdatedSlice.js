@@ -10,7 +10,13 @@ const initialState = {
 
 export const getApiCall = createAsyncThunk('getblogforupdate/post',async function (id,{rejectWithValue}) {
   try {
-     const res = await axios.get(`/api/blog/readblog/${id}`);
+     const res = await axios.get(
+  `/api/blog/readblog/${id}`,
+  {
+    withCredentials: true,
+  }
+);
+
               console.log(res.data);
               return res?.data;
   } catch (error) {

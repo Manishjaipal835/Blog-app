@@ -24,10 +24,10 @@ export const regCallApi = createAsyncThunk(
           },
         }
       );
-
+      
       return res.data;
     } catch (error) {
-      console.log("REG API ERROR 👉", error);
+      console.log("REG API ERROR ", error);
       return rejectWithValue(error.response?.data || error.message);
     }
   }

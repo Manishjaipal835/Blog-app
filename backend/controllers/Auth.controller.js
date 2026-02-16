@@ -53,13 +53,16 @@ const loginController = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     message: "Login successful",
+    user: { id: existingUser._id,
+    name: existingUser.name,
+    email: existingUser.email,}
   });
 });
 
 /* ================= AUTH MIDDLEWARE ================= */
 const isLogin = (req, res, next) => {
   const token = req?.cookies?.token;
-
+   console.log('delete req')
   if (!token) {
     return res.status(401).json({ message: "Login required" });
   }
@@ -75,8 +78,6 @@ const isLogin = (req, res, next) => {
 };
 
 
-
-/* ================= PROFILE ================= */
 const profileController = asyncHandler(async (req, res) => {
   const existingUser = await user.findOne({ email: req.user.email });
 
@@ -92,17 +93,19 @@ const profileController = asyncHandler(async (req, res) => {
   });
 });
 
-/* ================= LOGOUT ================= */
+
 const logoutController = asyncHandler(async (req, res) => {
-  res.cookie("token", "", {
+  res.clearCookie("token", {
     httpOnly: true,
-    expires: new Date(0),
+    sameSite: "lax",
+    secure: false,
   });
 
   return res.status(200).json({
     message: "Logged out successfully",
   });
 });
+
 
 module.exports = {
   registrationController,

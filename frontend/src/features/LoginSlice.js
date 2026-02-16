@@ -4,9 +4,12 @@ import axios from "axios";
 const initialState = {
   email: "",
   password: "",
+  user: null,          
+  isAuthenticated: false, 
   status: "idle",
   error: null
 };
+
 
 export const LoginCallApi = createAsyncThunk(
   "loginUser/post",
@@ -46,6 +49,11 @@ const LoginSlice = createSlice({
       state.password = action.payload;
       state.status = "idle";
       state.error = null;
+    },
+    logout: (state) => {   
+      state.user = null;
+      state.isAuthenticated = false;
+      state.status = "idle";
     }
   },
   extraReducers: (builder) => {
@@ -54,8 +62,10 @@ const LoginSlice = createSlice({
         state.status = "pending";
         state.error = null;
       })
-      .addCase(LoginCallApi.fulfilled, (state) => {
+      .addCase(LoginCallApi.fulfilled, (state, action) => {
         state.status = "success";
+        state.user = action.payload.user; 
+        state.isAuthenticated = true;
       })
       .addCase(LoginCallApi.rejected, (state, action) => {
         state.status = "rejected";
@@ -64,5 +74,5 @@ const LoginSlice = createSlice({
   }
 });
 
-export const { setEmail, setPassword } = LoginSlice.actions;
+export const { setEmail, setPassword ,logout} = LoginSlice.actions;
 export default LoginSlice.reducer;
